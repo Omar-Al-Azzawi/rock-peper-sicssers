@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
+  const [userChoise, setUserChoise] = useState(null);
+  const [computerChoise, setComputerChoise] = useState(null);
+  const [result, setResult] = useState(null);
+
+  const choices = ["rock", "paper", "sicssers"];
+
+  const handleClick = (value) => {
+    setUserChoise(value);
+    generatecomputerChoise();
+  };
+
+  const generatecomputerChoise = () => {
+    const randomChoise = choices[Math.floor(Math.random() * choices.length)];
+    setComputerChoise(randomChoise);
+  };
+
+  useEffect(() => {
+    switch (userChoise + computerChoise) {
+      case "sicsserspaper":
+      case "rocksicssers":
+      case "paperrock":
+        setResult("you win!");
+        break;
+      case "papersicssers":
+      case "sicssersrock":
+      case "rockpaper":
+        setResult("You lose!");
+        break;
+      case "sicsserssicssers":
+      case "paperpaper":
+      case "rockrock":
+        setResult("Its a draw!");
+        break;
+    }
+  }, [computerChoise, userChoise]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>You choice is: {userChoise}</h1>
+      <h1>Computer choice is: {computerChoise}</h1>
+      {/* <button onClick={() => handleClick('rock')}>Rock</button>
+      <button onClick={() => handleClick('paper')}>paper</button>
+      <button onClick={() => handleClick('sicssers')}>sicssers</button> */}
+      {choices.map((choise, index) => (
+        <button key={index} onClick={() => handleClick(choise)}>
+          {choise}
+        </button>
+      ))}
+      <h1>{result}</h1>
     </div>
   );
 }
