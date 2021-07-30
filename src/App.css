@@ -1,38 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Righteous&family=Roboto:wght@300;400;500;700&family=Teko:wght@400;600&display=swap");
+body {
+  background-color: #efeeee;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  font-family: "Righteous", cursive;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App button {
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem;
+  background-color: #efeeee;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  outline: none;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  box-shadow: -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
+  box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.5);
+  font-family: "Palette Mosaic", cursive;
+  text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App button:hover {
+  background-color: rgba(217, 210, 200, 0.51);
 }

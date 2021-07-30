@@ -33,7 +33,7 @@ function App() {
       case "sicsserssicssers":
       case "paperpaper":
       case "rockrock":
-        setResult("Its a draw!");
+        setResult("It's a draw!");
         break;
     }
   }, [computerChoise, userChoise]);
